@@ -1,0 +1,72 @@
+[
+    {
+        "Diagnosed": "2016-03-03",
+        "Cured": "2017-03-03",
+        "Note": "Нет пометок",
+        "PatientId": "1",
+        "DiseaseId": "1"
+    },
+    {
+        "Diagnosed": "2016-03-03",
+        "Cured": "2017-03-03",
+        "Note": "Нет пометок",
+        "PatientId": "2",
+        "DiseaseId": "2"
+    },
+    {
+        "Diagnosed": "2016-03-03",
+        "Cured": "2017-03-03",
+        "Note": "Нет пометок",
+        "PatientId": "3",
+        "DiseaseId": "3"
+    },
+    {
+        "Diagnosed": "2016-03-03",
+        "Cured": "2017-03-03",
+        "Note": "Нет пометок",
+        "PatientId": "4",
+        "DiseaseId": "4"
+    },
+    {
+        "Diagnosed": "2016-03-03",
+        "Cured": "2017-03-03",
+        "Note": "Нет пометок",
+        "PatientId": "5",
+        "DiseaseId": "1"
+    },
+    {
+        "Diagnosed": "2016-03-03",
+        "Cured": "2017-03-03",
+        "Note": "Нет пометок",
+        "PatientId": "6",
+        "DiseaseId": "2"
+    },
+    {
+        "Diagnosed": "2016-03-03",
+        "Cured": "2017-03-03",
+        "Note": "Нет пометок",
+        "PatientId": "7",
+        "DiseaseId": "3"
+    },
+    {
+        "Diagnosed": "2016-03-03",
+        "Cured": "2017-03-03",
+        "Note": "Нет пометок",
+        "PatientId": "8",
+        "DiseaseId": "4"
+    },
+    {
+        "Diagnosed": "2016-03-03",
+        "Cured": "2017-03-03",
+        "Note": "Нет пометок",
+        "PatientId": "9",
+        "DiseaseId": "3"
+    },
+    {
+        "Diagnosed": "2016-03-03",
+        "Cured": "2017-03-03",
+        "Note": "Нет пометок",
+        "PatientId": "10",
+        "DiseaseId": "4"
+    }
+]

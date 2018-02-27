@@ -1,0 +1,11 @@
+[
+    {
+        "Role": "admin",
+        "FamilyName": "Admin",
+        "Name": "Admin",
+        "MiddleName": "Admin",
+        "Birthdate": "1990-02-13",
+        "PositionId": "1",
+        "DepartmentId": "1"
+    }
+]

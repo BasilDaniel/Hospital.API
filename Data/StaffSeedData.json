@@ -1,0 +1,122 @@
+[
+    {
+        "Role": "staff",
+        "FamilyName": "Иванов",
+        "Name": "Иван",
+        "MiddleName": "Иванович",
+        "Birthdate": "1990-02-13",
+        "AppointmentDuration": "00:20:00",
+        "PositionId": "2",
+        "DepartmentId": "2"
+    },
+    {
+        "Role": "staff",
+        "FamilyName": "Петров",
+        "Name": "Петр",
+        "MiddleName": "Петрович",
+        "Birthdate": "1970-10-20",         
+        "AppointmentDuration": "00:20:00",       
+        "PositionId": "3",
+        "DepartmentId": "3"
+    },
+    {
+        "Role": "staff",
+        "FamilyName": "Сергеев",
+        "Name": "Сергей",
+        "MiddleName": "Сергеевич",
+        "Birthdate": "1980-02-13",
+        "AppointmentDuration": "00:20:00",
+        "PositionId": "4",
+        "DepartmentId": "4"
+    },
+    {
+        "Role": "staff",
+        "FamilyName": "Алексеев",
+        "Name": "Алексей",
+        "MiddleName": "Алексеевич",
+        "Birthdate": "1975-05-05",
+        "AppointmentDuration": "00:20:00",
+        "PositionId": "5",
+        "DepartmentId": "5"
+    },
+    {
+        "Role": "staff",
+        "FamilyName": "Никитин",
+        "Name": "Никита",
+        "MiddleName": "Никитич",
+        "Birthdate": "1981-01-01",
+        "AppointmentDuration": "00:20:00",
+        "PositionId": "2",
+        "DepartmentId": "2"
+    },
+    {
+        "Role": "staff",
+        "FamilyName": "Владов",
+        "Name": "Влад",
+        "MiddleName": "Владич",
+        "Birthdate": "1982-02-02",         
+        "AppointmentDuration": "00:20:00",       
+        "PositionId": "3",
+        "DepartmentId": "3"
+    },
+    {
+        "Role": "staff",
+        "FamilyName": "Михайлов",
+        "Name": "Михаил",
+        "MiddleName": "Михайлович",
+        "Birthdate": "1983-03-03",
+        "AppointmentDuration": "00:20:00",
+        "PositionId": "4",
+        "DepartmentId": "4"
+    },
+    {
+        "Role": "staff",
+        "FamilyName": "Евгеньев",
+        "Name": "Евгений",
+        "MiddleName": "Евгеньевич",
+        "Birthdate": "1984-04-04",
+        "AppointmentDuration": "00:20:00",
+        "PositionId": "5",
+        "DepartmentId": "5"
+    },
+    {
+        "Role": "staff",
+        "FamilyName": "Стасов",
+        "Name": "Станислав",
+        "MiddleName": "Станиславович",
+        "Birthdate": "1985-05-05",
+        "AppointmentDuration": "00:20:00",
+        "PositionId": "2",
+        "DepartmentId": "2"
+    },
+    {
+        "Role": "staff",
+        "FamilyName": "Антонов",
+        "Name": "Антон",
+        "MiddleName": "Антонович",
+        "Birthdate": "1986-06-06",         
+        "AppointmentDuration": "00:20:00",       
+        "PositionId": "3",
+        "DepartmentId": "3"
+    },
+    {
+        "Role": "staff",
+        "FamilyName": "Глебов",
+        "Name": "Глеб",
+        "MiddleName": "Глебович",
+        "Birthdate": "1987-07-07",
+        "AppointmentDuration": "00:20:00",
+        "PositionId": "4",
+        "DepartmentId": "4"
+    },
+    {
+        "Role": "staff",
+        "FamilyName": "Ильин",
+        "Name": "Илья",
+        "MiddleName": "Ильич",
+        "Birthdate": "1988-08-08",
+        "AppointmentDuration": "00:20:00",
+        "PositionId": "5",
+        "DepartmentId": "5"
+    }
+]
