@@ -160,6 +160,7 @@ namespace Hospital.API.Data
         {
             var appointments = _context.Appointments
             .Include(s => s.Staff).ThenInclude(p => p.Position)
+            .Include(s => s.Staff).ThenInclude(p => p.Department)
             .Include(p => p.Patient)
             .AsQueryable();
 
@@ -170,6 +171,14 @@ namespace Hospital.API.Data
             else if(userParams.StaffId != null)
             {
                 appointments = appointments.Where(s => s.StaffId == userParams.StaffId);
+            }
+            else if(userParams.Position != null)
+            {
+                appointments = appointments.Where(s => s.Staff.Position.Name == userParams.Position);
+            }
+            else if(userParams.Department != null)
+            {
+                appointments = appointments.Where(s => s.Staff.Department.Name == userParams.Department);
             }
             else if(userParams.PatientId != null)
             {
