@@ -253,7 +253,7 @@ namespace Hospital.API.Data
             if (!string.IsNullOrEmpty(userParams.Name))
             {
                 diseases = diseases.Where(u => 
-                    u.Name.StartsWith(userParams.Name)
+                    u.Name.Contains(userParams.Name)
                 );
             }
 
