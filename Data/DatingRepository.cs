@@ -193,26 +193,35 @@ namespace Hospital.API.Data
             .Include(p => p.Patient)
             .AsQueryable();
 
+            if (userParams.StaffId != null && userParams.PatientId != null && userParams.DateTime.Year > 0001)
+            {
+                appointments = appointments.Where(u => u.DateTime == userParams.DateTime);
+                appointments = appointments.Where(s => s.StaffId == userParams.StaffId);
+                appointments = appointments.Where(p => p.PatientId == userParams.PatientId);
+
+                return await PagedList<Appointment>.CreateAsync(appointments, userParams.PageNumber, userParams.PageSize);
+            }
+
             if (userParams.DateTime.Year > 0001)
             {
                 appointments = appointments.Where(u => u.DateTime == userParams.DateTime);
+            }
+
+            if (!string.IsNullOrEmpty(userParams.Position) || !string.IsNullOrEmpty(userParams.Department))
+            {
+                 if(string.IsNullOrEmpty(userParams.Position))
+                {
+                    appointments = appointments.Where(u => u.Staff.Department.Name == userParams.Department);
+                }
+                else if(string.IsNullOrEmpty(userParams.Department))
+                {
+                    appointments = appointments.Where(u => u.Staff.Position.Name == userParams.Position);
+                }                
+                else                
+                {
+                    appointments = appointments.Where(u => u.Staff.Department.Name == userParams.Department || u.Staff.Position.Name == userParams.Position);
+                }
             } 
-            else if(userParams.StaffId != null)
-            {
-                appointments = appointments.Where(s => s.StaffId == userParams.StaffId);
-            }
-            else if(userParams.Position != null)
-            {
-                appointments = appointments.Where(s => s.Staff.Position.Name == userParams.Position);
-            }
-            else if(userParams.Department != null)
-            {
-                appointments = appointments.Where(s => s.Staff.Department.Name == userParams.Department);
-            }
-            else if(userParams.PatientId != null)
-            {
-                appointments = appointments.Where(p => p.PatientId == userParams.PatientId);
-            }
 
             return await PagedList<Appointment>.CreateAsync(appointments, userParams.PageNumber, userParams.PageSize);
         }

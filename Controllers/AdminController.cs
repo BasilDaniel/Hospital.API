@@ -253,15 +253,13 @@ namespace Hospital.API.Controllers
                 var Appointments = await _adminRepo.GetAppointments(FilterParams);
                 
                 //Cheking existence of patient and staff
-                if(Patients.Exists(p => p.Id == adminAppointmentCreate.PatientId) && 
-                    Staffs.Exists(s => s.Id == adminAppointmentCreate.StaffId)){
+                if(Patients != null && Staffs != null){
                     
                     Console.WriteLine(111);
 
                         //Cheking existence of appointment
-                    if(Appointments.Exists(
-                        x => x.DateTime == adminAppointmentCreate.DateTime && x.StaffId == adminAppointmentCreate.StaffId ||
-                        x.DateTime == adminAppointmentCreate.DateTime && x.PatientId == adminAppointmentCreate.PatientId)){
+                    if(Appointments != null)
+                    {
                         Console.WriteLine(444);
                         return BadRequest(ModelState);
                     } 

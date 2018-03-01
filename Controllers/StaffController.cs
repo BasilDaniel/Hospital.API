@@ -173,5 +173,26 @@ namespace Hospital.API.Controllers
 
             return Ok(positionsToReturn);
         }
+
+        // GET Diseases
+        [HttpGet]
+        public async Task<IActionResult> Diseases(UserParams userParams)
+        {
+            var diseases = await _staffRepo.GetDiseases(userParams);
+            var diseasesToReturn = _staffMapper.Map<IEnumerable<SharedDiseasesList>>(diseases);
+            Response.AddPagination(diseases.CurrentPage, diseases.PageSize, diseases.TotalCount, diseases.TotalPages);
+            
+            return Ok(diseasesToReturn);
+        }
+
+        // GET Disease/id
+        [HttpGet("{id}")]
+        public async Task<IActionResult> Disease(int id)
+        {
+            var disease = await _staffRepo.GetDisease(id);
+            var diseaseToReturn = _staffMapper.Map<SharedDiseaseDetailed>(disease);
+
+            return Ok(diseaseToReturn);
+        }
     }
 }
