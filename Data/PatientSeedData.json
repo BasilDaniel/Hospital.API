@@ -1,72 +1,72 @@
 [
     {
         "Role": "patient",
-        "FamilyName": "Иванова",
-        "Name": "Ирина",
-        "MiddleName": "Ивановна",
+        "FamilyName": "иванова",
+        "Name": "ирина",
+        "MiddleName": "ивановна",
         "Birthdate": "1990-02-13"
     },
     {
         "Role": "patient",
         "FamilyName": "Петров",
-        "Name": "Петр",
-        "MiddleName": "Петрович",
+        "Name": "петр",
+        "MiddleName": "петрович",
         "Birthdate": "1985-04-12"
     },
     {
         "Role": "patient",
-        "FamilyName": "Федоров",
-        "Name": "Федор",
-        "MiddleName": "Федорович",
+        "FamilyName": "федоров",
+        "Name": "федор",
+        "MiddleName": "федорович",
         "Birthdate": "1980-06-01"
     },
     {
         "Role": "patient",
         "FamilyName": "Сергеев",
-        "Name": "Сергей",
-        "MiddleName": "Сергеевич",
+        "Name": "сергей",
+        "MiddleName": "сергеевич",
         "Birthdate": "1975-07-15"
     },
     {
         "Role": "patient",
-        "FamilyName": "Сергеева",
-        "Name": "Татьяна",
-        "MiddleName": "Сергеевна",
+        "FamilyName": "сергеева",
+        "Name": "татьяна",
+        "MiddleName": "сергеевна",
         "Birthdate": "1970-06-11"
     },
     {
         "Role": "patient",
-        "FamilyName": "Ильин",
-        "Name": "Василий",
-        "MiddleName": "Петрович",
+        "FamilyName": "ильин",
+        "Name": "василий",
+        "MiddleName": "петрович",
         "Birthdate": "1980-05-12"
     },
     {
         "Role": "patient",
-        "FamilyName": "Юрьев",
-        "Name": "Максим",
-        "MiddleName": "Ильич",
+        "FamilyName": "юрьев",
+        "Name": "максим",
+        "MiddleName": "ильич",
         "Birthdate": "1975-02-05"
     },
     {
         "Role": "patient",
-        "FamilyName": "Макаров",
-        "Name": "Макар",
-        "MiddleName": "Сергеевич",
+        "FamilyName": "макаров",
+        "Name": "макар",
+        "MiddleName": "сергеевич",
         "Birthdate": "1998-05-15"
     },
     {
         "Role": "patient",
-        "FamilyName": "Дмитриев",
-        "Name": "Вазген",
-        "MiddleName": "Изольдович",
+        "FamilyName": "дмитриев",
+        "Name": "вазген",
+        "MiddleName": "изольдович",
         "Birthdate": "2010-01-31"
     },
     {
         "Role": "patient",
-        "FamilyName": "Глубокский",
-        "Name": "Басейн",
-        "MiddleName": "Вадеевич",
+        "FamilyName": "глубокский",
+        "Name": "басейн",
+        "MiddleName": "вадеевич",
         "Birthdate": "1949-09-06"
     }
 ]
