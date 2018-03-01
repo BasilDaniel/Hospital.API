@@ -117,26 +117,55 @@ namespace Hospital.API.Data
             .Include(d => d.Department)
             .Include(p => p.Position)
             .AsQueryable();
+            string[] userParamsArray;
 
-            if (!string.IsNullOrEmpty(userParams.Position) || !string.IsNullOrEmpty(userParams.Department) || userParams.StaffId != null)
+            if (!string.IsNullOrEmpty(userParams.Name))
             {
-                Console.WriteLine(1);
-                if(userParams.StaffId != null){
-                    staffs = staffs.Where(i => i.Id == userParams.StaffId);
+                userParamsArray = userParams.Name.Split((string[]) null, StringSplitOptions.RemoveEmptyEntries);
+                if(userParamsArray.Length == 1){
+                    staffs = staffs.Where(u => 
+                    u.FamilyName.StartsWith(userParamsArray[0]) || 
+                    u.Name.StartsWith(userParamsArray[0]) ||
+                    u.MiddleName.StartsWith(userParamsArray[0])
+                    );
                 }
-                else if(string.IsNullOrEmpty(userParams.Position))
+                else if(userParamsArray.Length == 2){
+                    staffs = staffs.Where(u => 
+                    u.FamilyName.StartsWith(userParamsArray[0]) || 
+                    u.Name.StartsWith(userParamsArray[0]) ||
+                    u.MiddleName.StartsWith(userParamsArray[0]) || 
+                    u.FamilyName.StartsWith(userParamsArray[1]) || 
+                    u.Name.StartsWith(userParamsArray[1]) ||
+                    u.MiddleName.StartsWith(userParamsArray[1])
+                    );
+                }
+                else if(userParamsArray.Length >= 3){
+                    staffs = staffs.Where(u => 
+                    u.FamilyName.StartsWith(userParamsArray[0]) || 
+                    u.Name.StartsWith(userParamsArray[0]) ||
+                    u.MiddleName.StartsWith(userParamsArray[0]) || 
+                    u.FamilyName.StartsWith(userParamsArray[1]) || 
+                    u.Name.StartsWith(userParamsArray[1]) ||
+                    u.MiddleName.StartsWith(userParamsArray[1]) ||
+                    u.FamilyName.StartsWith(userParamsArray[2]) || 
+                    u.Name.StartsWith(userParamsArray[2]) ||
+                    u.MiddleName.StartsWith(userParamsArray[2])
+                    );
+                }
+            }
+
+            if (!string.IsNullOrEmpty(userParams.Position) || !string.IsNullOrEmpty(userParams.Department))
+            {
+                 if(string.IsNullOrEmpty(userParams.Position))
                 {
-                    Console.WriteLine(2);
                     staffs = staffs.Where(u => u.Department.Name == userParams.Department);
                 }
                 else if(string.IsNullOrEmpty(userParams.Department))
                 {
-                    Console.WriteLine(3);
                     staffs = staffs.Where(u => u.Position.Name == userParams.Position);
                 }                
                 else                
                 {
-                    Console.WriteLine(4);
                     staffs = staffs.Where(u => u.Department.Name == userParams.Department || u.Position.Name == userParams.Position);
                 }
             } 
