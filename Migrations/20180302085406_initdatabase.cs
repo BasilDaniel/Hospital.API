@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 namespace Hospital.API.Migrations
 {
-    public partial class InitDatabase : Migration
+    public partial class initdatabase : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -44,6 +44,7 @@ namespace Hospital.API.Migrations
                         .Annotation("Sqlite:Autoincrement", true),
                     Birthdate = table.Column<DateTime>(nullable: false),
                     FamilyName = table.Column<string>(nullable: true),
+                    Login = table.Column<string>(nullable: true),
                     MiddleName = table.Column<string>(nullable: true),
                     Name = table.Column<string>(nullable: true),
                     PasswordHash = table.Column<byte[]>(nullable: true),
@@ -73,13 +74,13 @@ namespace Hospital.API.Migrations
                 name: "PatientDiseases",
                 columns: table => new
                 {
-                    PatientId = table.Column<int>(nullable: true),
-                    DiseaseId = table.Column<int>(nullable: true),
-                    Cured = table.Column<DateTime>(nullable: true),
-                    Diagnosed = table.Column<DateTime>(nullable: true),
                     Id = table.Column<int>(nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
-                    Note = table.Column<string>(nullable: true)
+                    Cured = table.Column<DateTime>(nullable: true),
+                    Diagnosed = table.Column<DateTime>(nullable: true),
+                    DiseaseId = table.Column<int>(nullable: true),
+                    Note = table.Column<string>(nullable: true),
+                    PatientId = table.Column<int>(nullable: true)
                 },
                 constraints: table =>
                 {
@@ -107,6 +108,7 @@ namespace Hospital.API.Migrations
                     Birthdate = table.Column<DateTime>(nullable: false),
                     DepartmentId = table.Column<int>(nullable: true),
                     FamilyName = table.Column<string>(nullable: true),
+                    Login = table.Column<string>(nullable: true),
                     MiddleName = table.Column<string>(nullable: true),
                     Name = table.Column<string>(nullable: true),
                     PasswordHash = table.Column<byte[]>(nullable: true),
@@ -141,6 +143,7 @@ namespace Hospital.API.Migrations
                     Birthdate = table.Column<DateTime>(nullable: false),
                     DepartmentId = table.Column<int>(nullable: true),
                     FamilyName = table.Column<string>(nullable: true),
+                    Login = table.Column<string>(nullable: true),
                     MiddleName = table.Column<string>(nullable: true),
                     Name = table.Column<string>(nullable: true),
                     PasswordHash = table.Column<byte[]>(nullable: true),
@@ -218,6 +221,11 @@ namespace Hospital.API.Migrations
                 name: "IX_PatientDiseases_DiseaseId",
                 table: "PatientDiseases",
                 column: "DiseaseId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_PatientDiseases_PatientId",
+                table: "PatientDiseases",
+                column: "PatientId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Staffs_DepartmentId",

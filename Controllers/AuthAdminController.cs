@@ -29,11 +29,9 @@ namespace Hospital.API.Controllers
         [HttpPost]
         public async Task<IActionResult> RegisterPatient([FromBody]PatientRegister patientRegister)
         {
-            if(!string.IsNullOrEmpty(patientRegister.Name))
-            patientRegister.Name = patientRegister.Name.ToLower();
-
-            if(await _adminRepo.PatientExists(patientRegister.Name))
-            ModelState.AddModelError("Name", "Имя пользователя уже используется");
+            // Check unique Login
+            if(await _adminRepo.PatientExists(patientRegister.Login))
+            ModelState.AddModelError("Login", "Логин пользователя уже используется");
 
             if (!ModelState.IsValid)
                 return BadRequest(ModelState);            
@@ -41,6 +39,7 @@ namespace Hospital.API.Controllers
             var PatientToCreate = new Patient
             {
                 Role = "admin",
+                Login = patientRegister.Login,
                 Name = patientRegister.Name,
                 FamilyName = patientRegister.FamilyName,
                 MiddleName = patientRegister.MiddleName,
@@ -57,11 +56,9 @@ namespace Hospital.API.Controllers
         [HttpPost]
         public async Task<IActionResult> RegisterStaff([FromBody]StaffRegister staffRegister)
         {
-            if(!string.IsNullOrEmpty(staffRegister.Name))
-            staffRegister.Name = staffRegister.Name.ToLower();
-
-            if(await _adminRepo.StaffExists(staffRegister.Name))
-            ModelState.AddModelError("Name", "Имя пользователя уже используется");
+            // Check unique Login
+            if(await _adminRepo.StaffExists(staffRegister.Login))
+            ModelState.AddModelError("Login", "Логин пользователя уже используется");
 
             if (!ModelState.IsValid)
                 return BadRequest(ModelState);            
@@ -69,10 +66,13 @@ namespace Hospital.API.Controllers
             var StaffToCreate = new Staff
             {
                 Role = "staff",
-                Name = staffRegister.Name,
-                FamilyName = staffRegister.FamilyName,
-                MiddleName = staffRegister.MiddleName,
-                Birthdate = staffRegister.Birthdate
+                Login = staffRegister.Login,
+                Name = staffRegister.Name.ToLower(),
+                FamilyName = staffRegister.FamilyName.ToLower(),
+                MiddleName = staffRegister.MiddleName.ToLower(),
+                Birthdate = staffRegister.Birthdate,
+                PositionId = staffRegister.PositionId,
+                DepartmentId =staffRegister.DepartmentId
             };
 
             var createStaff = await _adminRepo.RegisterStaff(StaffToCreate, staffRegister.Password);
@@ -85,11 +85,9 @@ namespace Hospital.API.Controllers
         [HttpPost]
         public async Task<IActionResult> RegisterAdmin([FromBody]StaffRegister staffRegister)
         {
-            if(!string.IsNullOrEmpty(staffRegister.Name))
-            staffRegister.Name = staffRegister.Name.ToLower();
-
-            if(await _adminRepo.StaffExists(staffRegister.Name))
-            ModelState.AddModelError("Name", "Имя пользователя уже используется");
+             // Check unique Login
+            if(await _adminRepo.AdminExists(staffRegister.Login))
+            ModelState.AddModelError("Login", "Логин пользователя уже используется");
 
             if (!ModelState.IsValid)
                 return BadRequest(ModelState);            
@@ -97,10 +95,13 @@ namespace Hospital.API.Controllers
             var AdminToCreate = new Admin
             {
                 Role = "admin",
-                Name = staffRegister.Name,
-                FamilyName = staffRegister.FamilyName,
-                MiddleName = staffRegister.MiddleName,
-                Birthdate = staffRegister.Birthdate
+                Login = staffRegister.Login,
+                Name = staffRegister.Name.ToLower(),
+                FamilyName = staffRegister.FamilyName.ToLower(),
+                MiddleName = staffRegister.MiddleName.ToLower(),
+                Birthdate = staffRegister.Birthdate,
+                PositionId = staffRegister.PositionId,
+                DepartmentId =staffRegister.DepartmentId
             };
 
             var createAdmin = await _adminRepo.RegisterAdmin(AdminToCreate, staffRegister.Password);

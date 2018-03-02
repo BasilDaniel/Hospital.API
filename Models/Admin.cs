@@ -8,6 +8,7 @@ namespace Hospital.API.Models
         public string Role { get; set; }
         public byte[] PasswordHash { get; set; }
         public byte[] PasswordSalt { get; set; }
+        public string Login { get; set; }
         public string FamilyName { get; set; }
         public string Name { get; set; }
         public string MiddleName { get; set; }

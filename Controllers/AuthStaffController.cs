@@ -22,7 +22,7 @@ namespace Hospital.API.Controllers
         {
             _staffConfigRepo = config;
             _staffRepo = repo;
-        }       
+        }
 
         [HttpPost]
         public async Task<IActionResult> Login([FromBody]SharedLogin sharedLogin)

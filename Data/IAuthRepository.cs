@@ -7,15 +7,15 @@ namespace Hospital.API.Data
     {
          Task<Staff> RegisterStaff(Staff staff, string password);
          Task<Staff> LoginStaff(string name, string password);
-         Task<bool> StaffExists(string name);
+         Task<bool> StaffExists(string login);
 
 
          Task<Patient> RegisterPatient(Patient patient, string password);
          Task<Patient> LoginPatient(string name, string password);
-         Task<bool> PatientExists(string name);
+         Task<bool> PatientExists(string login);
 
          Task<Admin> RegisterAdmin(Admin admin, string password);
          Task<Admin> LoginAdmin(string name, string password);
-         Task<bool> AdminExists(string name);
+         Task<bool> AdminExists(string login);
     }
 }

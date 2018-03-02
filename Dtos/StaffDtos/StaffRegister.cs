@@ -6,6 +6,9 @@ namespace Hospital.API.Dtos
 {
     public class StaffRegister
     {
+        [Required (ErrorMessage ="Укажите логин")]
+        public string Login { get; set; }
+
         [Required (ErrorMessage ="Укажите имя")]
         public string Name { get; set; }
 
@@ -23,9 +26,9 @@ namespace Hospital.API.Dtos
         public DateTime Birthdate { get; set; }
 
         [Required (ErrorMessage ="Укажите должность")]
-        public Position Position { get; set; }
+        public int PositionId { get; set; }
 
         [Required (ErrorMessage ="Укажите отделение")]
-        public Department Department { get; set; }
+        public int DepartmentId { get; set; }
     }
 }

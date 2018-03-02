@@ -5,6 +5,8 @@ namespace Hospital.API.Dtos
 {
     public class PatientRegister
     {
+        [Required (ErrorMessage ="Укажите логин")]
+        public string Login { get; set; }
 
         [Required (ErrorMessage ="Укажите имя")]
         public string Name { get; set; }

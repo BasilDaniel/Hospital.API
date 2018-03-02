@@ -1,6 +1,7 @@
 [
     {
         "Role": "staff",
+        "Login": "иванов",
         "FamilyName": "иванов",
         "Name": "иван",
         "MiddleName": "иванович",
@@ -11,6 +12,7 @@
     },
     {
         "Role": "staff",
+        "Login": "петров",
         "FamilyName": "петров",
         "Name": "петр",
         "MiddleName": "петрович",
@@ -21,6 +23,7 @@
     },
     {
         "Role": "staff",
+        "Login": "сергеев",
         "FamilyName": "сергеев",
         "Name": "сергей",
         "MiddleName": "сергеевич",
@@ -32,6 +35,8 @@
     {
         "Role": "staff",
         "FamilyName": "алексеев",
+        "Login": "иванов",
+        "FamilyName": "алексеев",
         "Name": "алексей",
         "MiddleName": "алексеевич",
         "Birthdate": "1975-05-05",
@@ -41,6 +46,7 @@
     },
     {
         "Role": "staff",
+        "Login": "никитин",
         "FamilyName": "никитин",
         "Name": "никита",
         "MiddleName": "никитич",
@@ -51,6 +57,7 @@
     },
     {
         "Role": "staff",
+        "Login": "владов",
         "FamilyName": "владов",
         "Name": "влад",
         "MiddleName": "владич",
@@ -61,6 +68,7 @@
     },
     {
         "Role": "staff",
+        "Login": "михайлов",
         "FamilyName": "михайлов",
         "Name": "михаил",
         "MiddleName": "михайлович",
@@ -71,6 +79,7 @@
     },
     {
         "Role": "staff",
+        "Login": "евгеньев",
         "FamilyName": "евгеньев",
         "Name": "евгений",
         "MiddleName": "евгеньевич",
@@ -81,6 +90,7 @@
     },
     {
         "Role": "staff",
+        "Login": "стасов",
         "FamilyName": "стасов",
         "Name": "станислав",
         "MiddleName": "станиславович",
@@ -91,6 +101,7 @@
     },
     {
         "Role": "staff",
+        "Login": "антонов",
         "FamilyName": "антонов",
         "Name": "антон",
         "MiddleName": "антонович",
@@ -101,6 +112,7 @@
     },
     {
         "Role": "staff",
+        "Login": "глебов",
         "FamilyName": "глебов",
         "Name": "глеб",
         "MiddleName": "глебович",
@@ -111,6 +123,7 @@
     },
     {
         "Role": "staff",
+        "Login": "ильин",
         "FamilyName": "ильин",
         "Name": "илья",
         "MiddleName": "ильич",

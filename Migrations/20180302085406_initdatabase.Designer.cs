@@ -11,8 +11,8 @@ using System;
 namespace Hospital.API.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20180221100405_InitDatabase")]
-    partial class InitDatabase
+    [Migration("20180302085406_initdatabase")]
+    partial class initdatabase
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -30,6 +30,8 @@ namespace Hospital.API.Migrations
                     b.Property<int?>("DepartmentId");
 
                     b.Property<string>("FamilyName");
+
+                    b.Property<string>("Login");
 
                     b.Property<string>("MiddleName");
 
@@ -113,6 +115,8 @@ namespace Hospital.API.Migrations
 
                     b.Property<string>("FamilyName");
 
+                    b.Property<string>("Login");
+
                     b.Property<string>("MiddleName");
 
                     b.Property<string>("Name");
@@ -130,21 +134,24 @@ namespace Hospital.API.Migrations
 
             modelBuilder.Entity("Hospital.API.Models.PatientDisease", b =>
                 {
-                    b.Property<int?>("PatientId");
-
-                    b.Property<int?>("DiseaseId");
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd();
 
                     b.Property<DateTime?>("Cured");
 
                     b.Property<DateTime?>("Diagnosed");
 
-                    b.Property<int>("Id");
+                    b.Property<int?>("DiseaseId");
 
                     b.Property<string>("Note");
 
-                    b.HasKey("PatientId", "DiseaseId");
+                    b.Property<int?>("PatientId");
+
+                    b.HasKey("Id");
 
                     b.HasIndex("DiseaseId");
+
+                    b.HasIndex("PatientId");
 
                     b.ToTable("PatientDiseases");
                 });
@@ -175,6 +182,8 @@ namespace Hospital.API.Migrations
                     b.Property<int?>("DepartmentId");
 
                     b.Property<string>("FamilyName");
+
+                    b.Property<string>("Login");
 
                     b.Property<string>("MiddleName");
 
@@ -223,13 +232,11 @@ namespace Hospital.API.Migrations
                 {
                     b.HasOne("Hospital.API.Models.Disease", "Disease")
                         .WithMany("PatientDiseases")
-                        .HasForeignKey("DiseaseId")
-                        .OnDelete(DeleteBehavior.Cascade);
+                        .HasForeignKey("DiseaseId");
 
                     b.HasOne("Hospital.API.Models.Patient", "Patient")
                         .WithMany("PatientDiseases")
-                        .HasForeignKey("PatientId")
-                        .OnDelete(DeleteBehavior.Cascade);
+                        .HasForeignKey("PatientId");
                 });
 
             modelBuilder.Entity("Hospital.API.Models.Staff", b =>

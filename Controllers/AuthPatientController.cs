@@ -28,12 +28,9 @@ namespace Hospital.API.Controllers
         [HttpPost]
         public async Task<IActionResult> Register([FromBody]PatientRegister patientRegister)
         {
-            if(!string.IsNullOrEmpty(patientRegister.Name))
-            patientRegister.Name = patientRegister.Name.ToLower();
-
-            // Check unique Name
-            // if(await _patientRepo.PatientExists(patientRegister.Name)) 
-            // ModelState.AddModelError("Name", "Имя пользователя уже используется");
+            // Check unique Login
+            if(await _patientRepo.PatientExists(patientRegister.Login)) 
+            ModelState.AddModelError("Login", "Логин пользователя уже используется");
 
             if (!ModelState.IsValid)
                 return BadRequest(ModelState);            
@@ -41,9 +38,10 @@ namespace Hospital.API.Controllers
             var PatientToCreate = new Patient
             {
                 Role = "patient",
-                Name = patientRegister.Name,
-                FamilyName = patientRegister.FamilyName,
-                MiddleName = patientRegister.MiddleName,
+                Login = patientRegister.Login,
+                Name = patientRegister.Name.ToLower(),
+                FamilyName = patientRegister.FamilyName.ToLower(),
+                MiddleName = patientRegister.MiddleName.ToLower(),
                 Birthdate = patientRegister.Birthdate
             };
 

@@ -16,9 +16,9 @@ namespace Hospital.API.Data
 
 
         // Staff
-        public async Task<bool> StaffExists(string name)
+        public async Task<bool> StaffExists(string login)
         {
-            if (await _context.Staffs.AnyAsync(x => x.Name == name))
+            if (await _context.Staffs.AnyAsync(x => x.Login == login))
                 return true;
 
             return false;
@@ -53,9 +53,9 @@ namespace Hospital.API.Data
 
 
         // Patient
-        public async Task<bool> PatientExists(string name)
+        public async Task<bool> PatientExists(string login)
         {
-            if (await _context.Patients.AnyAsync(x => x.Name == name))
+            if (await _context.Patients.AnyAsync(x => x.Login == login))
                 return true;
 
             return false;
@@ -90,9 +90,9 @@ namespace Hospital.API.Data
 
 
         // Admin
-         public async Task<bool> AdminExists(string name)
+         public async Task<bool> AdminExists(string login)
         {
-            if (await _context.Admins.AnyAsync(x => x.Name == name))
+            if (await _context.Admins.AnyAsync(x => x.Login == login))
                 return true;
 
             return false;
