@@ -38,7 +38,7 @@ namespace Hospital.API.Controllers
 
             var PatientToCreate = new Patient
             {
-                Role = "admin",
+                Role = "patient",
                 Login = patientRegister.Login,
                 Name = patientRegister.Name,
                 FamilyName = patientRegister.FamilyName,
@@ -72,7 +72,8 @@ namespace Hospital.API.Controllers
                 MiddleName = staffRegister.MiddleName.ToLower(),
                 Birthdate = staffRegister.Birthdate,
                 PositionId = staffRegister.PositionId,
-                DepartmentId =staffRegister.DepartmentId
+                DepartmentId =staffRegister.DepartmentId,
+                AppointmentDuration = staffRegister.AppointmentDuration
             };
 
             var createStaff = await _adminRepo.RegisterStaff(StaffToCreate, staffRegister.Password);

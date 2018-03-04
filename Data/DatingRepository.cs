@@ -202,6 +202,14 @@ namespace Hospital.API.Data
                 return await PagedList<Appointment>.CreateAsync(appointments, userParams.PageNumber, userParams.PageSize);
             }
 
+            if (userParams.StaffId != null && userParams.DateTime.Year > 0001)
+            {
+                appointments = appointments.Where(u => u.DateTime == userParams.DateTime);
+                appointments = appointments.Where(s => s.StaffId == userParams.StaffId);
+
+                return await PagedList<Appointment>.CreateAsync(appointments, userParams.PageNumber, userParams.PageSize);
+            }
+
             if (userParams.DateTime.Year > 0001)
             {
                 appointments = appointments.Where(u => u.DateTime == userParams.DateTime);

@@ -4,9 +4,9 @@ namespace Hospital.API.Helpers
 {
     public class UserParams
     {
-        private const int MaxPageSize = 100;
+        private const int MaxPageSize = 300;
         public int PageNumber { get; set; } = 1;
-        private int pageSize = 100;
+        private int pageSize = 300;
         public int PageSize
         {
             get { return pageSize;}

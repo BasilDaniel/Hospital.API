@@ -90,6 +90,17 @@ namespace Hospital.API.Controllers
             return Ok(staffToReturn);
         }
 
+        // GET Appointments
+        [HttpGet]
+        public async Task<IActionResult> Appointments(UserParams userParams)
+        {
+            var appointments = await _patientRepo.GetAppointments(userParams);
+            var appointmentsToReturn = _patientMapper.Map<IEnumerable<PatientAppointmentsList>>(appointments);
+            Response.AddPagination(appointments.CurrentPage, appointments.PageSize, appointments.TotalCount, appointments.TotalPages);
+            
+            return Ok(appointmentsToReturn);
+        }
+
         // POST Appointment
         [HttpPost]
         public async Task<IActionResult> CreateAppointment([FromBody] PatientAppointmentCreate patientAppointmentCreate)

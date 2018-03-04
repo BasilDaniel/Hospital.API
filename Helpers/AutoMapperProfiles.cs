@@ -54,6 +54,7 @@ namespace Hospital.API.Helpers
             CreateMap<Appointment, PatientStaffAppointmentsDetailed>();
             CreateMap<PatientUpdate, Patient>();
             CreateMap<PatientAppointmentCreate, Appointment>();
+            CreateMap<Appointment, PatientAppointmentsList>();
             
         }
     }

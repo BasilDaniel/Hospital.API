@@ -22,8 +22,11 @@ namespace Hospital.API.Dtos
         [Required (ErrorMessage ="Укажите отчество")]
         public string MiddleName { get; set; }
         
-        // [Required]
+        [Required  (ErrorMessage ="Укажите дату рождения")]
         public DateTime Birthdate { get; set; }
+
+        [Required  (ErrorMessage ="Укажите длительность приема")]
+        public TimeSpan AppointmentDuration { get; set; }
 
         [Required (ErrorMessage ="Укажите должность")]
         public int PositionId { get; set; }
