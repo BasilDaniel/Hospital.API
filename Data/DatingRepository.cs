@@ -195,6 +195,7 @@ namespace Hospital.API.Data
 
             if (userParams.StaffId != null && userParams.PatientId != null && userParams.DateTime.Year > 0001)
             {
+                Console.WriteLine(111);
                 appointments = appointments.Where(u => u.DateTime == userParams.DateTime);
                 appointments = appointments.Where(s => s.StaffId == userParams.StaffId);
                 appointments = appointments.Where(p => p.PatientId == userParams.PatientId);
@@ -204,7 +205,8 @@ namespace Hospital.API.Data
 
             if (userParams.StaffId != null && userParams.DateTime.Year > 0001)
             {
-                appointments = appointments.Where(u => u.DateTime == userParams.DateTime);
+                Console.WriteLine(222);
+                appointments = appointments.Where(u => u.DateTime.Date == userParams.DateTime.Date);
                 appointments = appointments.Where(s => s.StaffId == userParams.StaffId);
 
                 return await PagedList<Appointment>.CreateAsync(appointments, userParams.PageNumber, userParams.PageSize);
@@ -212,11 +214,13 @@ namespace Hospital.API.Data
 
             if (userParams.DateTime.Year > 0001)
             {
+                Console.WriteLine(333);
                 appointments = appointments.Where(u => u.DateTime == userParams.DateTime);
             }
 
             if (!string.IsNullOrEmpty(userParams.Position) || !string.IsNullOrEmpty(userParams.Department))
             {
+                Console.WriteLine(444);
                  if(string.IsNullOrEmpty(userParams.Position))
                 {
                     appointments = appointments.Where(u => u.Staff.Department.Name == userParams.Department);
@@ -230,7 +234,8 @@ namespace Hospital.API.Data
                     appointments = appointments.Where(u => u.Staff.Department.Name == userParams.Department || u.Staff.Position.Name == userParams.Position);
                 }
             } 
-
+            
+            Console.WriteLine(555);
             return await PagedList<Appointment>.CreateAsync(appointments, userParams.PageNumber, userParams.PageSize);
         }
 
