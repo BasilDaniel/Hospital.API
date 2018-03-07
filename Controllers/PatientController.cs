@@ -105,8 +105,11 @@ namespace Hospital.API.Controllers
         [HttpPost]
         public async Task<IActionResult> CreateAppointment([FromBody] PatientAppointmentCreate patientAppointmentCreate)
         {
-            if (!ModelState.IsValid)
+            if (!ModelState.IsValid){
+                Console.WriteLine(111);
                 return BadRequest(ModelState);
+            }
+                
 
             var currentPatientId = int.Parse(User.FindFirst(ClaimTypes.NameIdentifier).Value);
 
@@ -114,8 +117,11 @@ namespace Hospital.API.Controllers
                 patientAppointmentCreate.DateTime > DateTime.Now && 
                 patientAppointmentCreate.PatientId != null){
 
-                if (currentPatientId != patientAppointmentCreate.PatientId)
+                if (currentPatientId != patientAppointmentCreate.PatientId){
+                    Console.WriteLine(222);
                     return Unauthorized();
+                }
+                    
                 
                 var FilterParams = new UserParams
                 {
@@ -132,7 +138,7 @@ namespace Hospital.API.Controllers
                 if(Patients.Exists(p => p.Id == patientAppointmentCreate.PatientId) && 
                     Staffs.Exists(s => s.Id == patientAppointmentCreate.StaffId)){
                     
-                    Console.WriteLine(111);
+                    Console.WriteLine(333);
 
                         //Cheking existence of appointment
                     if(Appointments.Exists(
@@ -142,7 +148,7 @@ namespace Hospital.API.Controllers
                         return BadRequest(ModelState);
                     } 
                     else{
-                        Console.WriteLine(333);
+                        Console.WriteLine(555);
                         var appointment = _patientMapper.Map<Appointment>(patientAppointmentCreate);
                         _patientRepo.Add(appointment); 
 
@@ -153,11 +159,11 @@ namespace Hospital.API.Controllers
                     }
                 }
                 else{
-                    Console.WriteLine(555);
+                    Console.WriteLine(666);
                      return BadRequest(ModelState);
                 }                    
             }
-            Console.WriteLine(222);
+            Console.WriteLine(777);
             return BadRequest(ModelState);
         }
 

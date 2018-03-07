@@ -215,7 +215,7 @@ namespace Hospital.API.Data
             if (userParams.DateTime.Year > 0001)
             {
                 Console.WriteLine(333);
-                appointments = appointments.Where(u => u.DateTime == userParams.DateTime);
+                appointments = appointments.Where(u => u.DateTime.Date == userParams.DateTime.Date);
             }
 
             if (!string.IsNullOrEmpty(userParams.Position) || !string.IsNullOrEmpty(userParams.Department))
