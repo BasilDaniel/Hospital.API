@@ -7,7 +7,7 @@ namespace Hospital.API.Dtos
         public string FamilyName { get; set; }
         public string Name { get; set; }
         public string MiddleName { get; set; }
-        public DateTime Birthdate { get; set; }
+        public DateTimeOffset Birthdate { get; set; }
         public int? PositionId { get; set; }
         public int? DepartmentId { get; set; }
     }

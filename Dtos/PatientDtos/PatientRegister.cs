@@ -18,7 +18,7 @@ namespace Hospital.API.Dtos
         public string MiddleName { get; set; }
 
         [Required (ErrorMessage ="Укажите дату рождения")]
-        public DateTime Birthdate { get; set; }
+        public DateTimeOffset Birthdate { get; set; }
 
         [Required (ErrorMessage ="Укажите пароль")]
         [StringLength(50, MinimumLength = 5, ErrorMessage = "Пароль должен содержать боллее 4 знаков")]

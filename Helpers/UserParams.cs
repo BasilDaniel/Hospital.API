@@ -20,7 +20,7 @@ namespace Hospital.API.Helpers
         public string Position { get; set; }
         public string Department { get; set; }
         public string Disease { get; set; }
-        public DateTime DateTime { get; set; }
+        public DateTimeOffset DateTime { get; set; }
         public string Staff { get; set; }
         public string Patient { get; set; }
         public int? StaffId { get; set; }

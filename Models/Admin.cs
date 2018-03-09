@@ -12,7 +12,7 @@ namespace Hospital.API.Models
         public string FamilyName { get; set; }
         public string Name { get; set; }
         public string MiddleName { get; set; }
-        public DateTime Birthdate { get; set; }
+        public DateTimeOffset Birthdate { get; set; }
 
         public Position Position { get; set; }
         public int? PositionId { get; set; }

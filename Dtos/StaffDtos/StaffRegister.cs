@@ -23,7 +23,7 @@ namespace Hospital.API.Dtos
         public string MiddleName { get; set; }
         
         [Required  (ErrorMessage ="Укажите дату рождения")]
-        public DateTime Birthdate { get; set; }
+        public DateTimeOffset Birthdate { get; set; }
 
         [Required  (ErrorMessage ="Укажите длительность приема")]
         public TimeSpan AppointmentDuration { get; set; }

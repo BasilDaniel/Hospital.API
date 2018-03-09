@@ -4,6 +4,6 @@ namespace Hospital.API.Dtos
 {
     public class PatientAppointmentsList
     {
-        public DateTime DateTime { get; set; }
+        public DateTimeOffset DateTime { get; set; }
     }
 }

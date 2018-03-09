@@ -5,7 +5,7 @@ namespace Hospital.API.Models
     public class Appointment
     {
         public int Id { get; set; }
-        public DateTime DateTime { get; set; }
+        public DateTimeOffset DateTime { get; set; }
         public string Note { get; set; }
         public TimeSpan Duration { get; set; }
 
