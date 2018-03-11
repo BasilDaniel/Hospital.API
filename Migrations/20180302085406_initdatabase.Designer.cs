@@ -61,7 +61,7 @@ namespace Hospital.API.Migrations
 
                     b.Property<DateTime>("DateTime");
 
-                    b.Property<TimeSpan>("Duration");
+                    b.Property<int>("Duration");
 
                     b.Property<string>("Note");
 
@@ -175,7 +175,7 @@ namespace Hospital.API.Migrations
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<TimeSpan>("AppointmentDuration");
+                    b.Property<int>("AppointmentDuration");
 
                     b.Property<DateTime>("Birthdate");
 

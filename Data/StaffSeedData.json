@@ -6,7 +6,7 @@
         "Name": "иван",
         "MiddleName": "иванович",
         "Birthdate": "1990-02-13",
-        "AppointmentDuration": "00:20:00",
+        "AppointmentDuration": "20",
         "PositionId": "2",
         "DepartmentId": "2"
     },
@@ -17,7 +17,7 @@
         "Name": "петр",
         "MiddleName": "петрович",
         "Birthdate": "1970-10-20",         
-        "AppointmentDuration": "00:20:00",       
+        "AppointmentDuration": "20",       
         "PositionId": "3",
         "DepartmentId": "3"
     },
@@ -28,7 +28,7 @@
         "Name": "сергей",
         "MiddleName": "сергеевич",
         "Birthdate": "1980-02-13",
-        "AppointmentDuration": "00:20:00",
+        "AppointmentDuration": "20",
         "PositionId": "4",
         "DepartmentId": "4"
     },
@@ -39,7 +39,7 @@
         "Name": "алексей",
         "MiddleName": "алексеевич",
         "Birthdate": "1975-05-05",
-        "AppointmentDuration": "00:20:00",
+        "AppointmentDuration": "20",
         "PositionId": "5",
         "DepartmentId": "5"
     },
@@ -50,7 +50,7 @@
         "Name": "никита",
         "MiddleName": "никитич",
         "Birthdate": "1981-01-01",
-        "AppointmentDuration": "00:20:00",
+        "AppointmentDuration": "20",
         "PositionId": "2",
         "DepartmentId": "2"
     },
@@ -61,7 +61,7 @@
         "Name": "влад",
         "MiddleName": "владич",
         "Birthdate": "1982-02-02",         
-        "AppointmentDuration": "00:20:00",       
+        "AppointmentDuration": "20",       
         "PositionId": "3",
         "DepartmentId": "3"
     },
@@ -72,7 +72,7 @@
         "Name": "михаил",
         "MiddleName": "михайлович",
         "Birthdate": "1983-03-03",
-        "AppointmentDuration": "00:20:00",
+        "AppointmentDuration": "20",
         "PositionId": "4",
         "DepartmentId": "4"
     },
@@ -83,7 +83,7 @@
         "Name": "евгений",
         "MiddleName": "евгеньевич",
         "Birthdate": "1984-04-04",
-        "AppointmentDuration": "00:20:00",
+        "AppointmentDuration": "20",
         "PositionId": "5",
         "DepartmentId": "5"
     },
@@ -94,7 +94,7 @@
         "Name": "станислав",
         "MiddleName": "станиславович",
         "Birthdate": "1985-05-05",
-        "AppointmentDuration": "00:20:00",
+        "AppointmentDuration": "20",
         "PositionId": "2",
         "DepartmentId": "2"
     },
@@ -105,7 +105,7 @@
         "Name": "антон",
         "MiddleName": "антонович",
         "Birthdate": "1986-06-06",         
-        "AppointmentDuration": "00:20:00",       
+        "AppointmentDuration": "20",       
         "PositionId": "3",
         "DepartmentId": "3"
     },
@@ -116,7 +116,7 @@
         "Name": "глеб",
         "MiddleName": "глебович",
         "Birthdate": "1987-07-07",
-        "AppointmentDuration": "00:20:00",
+        "AppointmentDuration": "20",
         "PositionId": "4",
         "DepartmentId": "4"
     },
@@ -127,7 +127,7 @@
         "Name": "илья",
         "MiddleName": "ильич",
         "Birthdate": "1988-08-08",
-        "AppointmentDuration": "00:20:00",
+        "AppointmentDuration": "20",
         "PositionId": "5",
         "DepartmentId": "5"
     }

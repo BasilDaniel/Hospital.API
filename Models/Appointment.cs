@@ -7,7 +7,7 @@ namespace Hospital.API.Models
         public int Id { get; set; }
         public DateTimeOffset DateTime { get; set; }
         public string Note { get; set; }
-        public TimeSpan Duration { get; set; }
+        public int Duration { get; set; }
 
         public Staff Staff { get; set; }
         public int? StaffId { get; set; }

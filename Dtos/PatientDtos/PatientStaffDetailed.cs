@@ -9,7 +9,7 @@ namespace Hospital.API.Dtos
         public string FamilyName { get; set; }
         public string Name { get; set; }
         public string MiddleName { get; set; }
-        public TimeSpan AppointmentDuration { get; set; }
+        public int AppointmentDuration { get; set; }
         public SharedPositionsList Position { get; set; }
         public SharedDepartmentsList Department { get; set; }
         public ICollection<PatientStaffAppointmentsDetailed> Appointments { get; set; }

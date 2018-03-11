@@ -12,7 +12,7 @@ namespace Hospital.API.Dtos
         public string Name { get; set; }
         public string MiddleName { get; set; }
         public DateTimeOffset Birthdate { get; set; }
-        public TimeSpan AppointmentDuration { get; set; }
+        public int AppointmentDuration { get; set; }
         public SharedPositionDetailed Position { get; set; }
         public SharedDepartmentDetailed Department { get; set; }
         public ICollection<SharedAppointmentsList> Appointments { get; set; } 

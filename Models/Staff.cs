@@ -15,7 +15,7 @@ namespace Hospital.API.Models
         public string Name { get; set; }
         public string MiddleName { get; set; }
         public DateTimeOffset Birthdate { get; set; }
-        public TimeSpan AppointmentDuration { get; set; }
+        public int AppointmentDuration { get; set; }
         public Position Position { get; set; }
         public int? PositionId { get; set; }
         public Department Department { get; set; }

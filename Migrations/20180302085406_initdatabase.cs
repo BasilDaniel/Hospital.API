@@ -139,7 +139,7 @@ namespace Hospital.API.Migrations
                 {
                     Id = table.Column<int>(nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
-                    AppointmentDuration = table.Column<TimeSpan>(nullable: true),
+                    AppointmentDuration = table.Column<int>(nullable: true),
                     Birthdate = table.Column<DateTimeOffset>(nullable: true),
                     DepartmentId = table.Column<int>(nullable: true),
                     FamilyName = table.Column<string>(nullable: true),
@@ -175,7 +175,7 @@ namespace Hospital.API.Migrations
                     Id = table.Column<int>(nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
                     DateTime = table.Column<DateTimeOffset>(nullable: false),
-                    Duration = table.Column<TimeSpan>(nullable: false),
+                    Duration = table.Column<int>(nullable: false),
                     Note = table.Column<string>(nullable: true),
                     PatientId = table.Column<int>(nullable: true),
                     StaffId = table.Column<int>(nullable: true)

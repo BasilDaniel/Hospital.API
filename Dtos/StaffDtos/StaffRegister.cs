@@ -26,7 +26,7 @@ namespace Hospital.API.Dtos
         public DateTimeOffset Birthdate { get; set; }
 
         [Required  (ErrorMessage ="Укажите длительность приема")]
-        public TimeSpan AppointmentDuration { get; set; }
+        public int AppointmentDuration { get; set; }
 
         [Required (ErrorMessage ="Укажите должность")]
         public int PositionId { get; set; }
