@@ -1,10 +1,11 @@
-﻿using Microsoft.EntityFrameworkCore.Migrations;
+﻿using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using System;
 using System.Collections.Generic;
 
 namespace Hospital.API.Migrations
 {
-    public partial class initdatabase : Migration
+    public partial class initSql : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -13,7 +14,7 @@ namespace Hospital.API.Migrations
                 columns: table => new
                 {
                     Id = table.Column<int>(nullable: false)
-                        .Annotation("Sqlite:Autoincrement", true),
+                        .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
                     Description = table.Column<string>(nullable: true),
                     Name = table.Column<string>(nullable: true)
                 },
@@ -27,7 +28,7 @@ namespace Hospital.API.Migrations
                 columns: table => new
                 {
                     Id = table.Column<int>(nullable: false)
-                        .Annotation("Sqlite:Autoincrement", true),
+                        .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
                     Description = table.Column<string>(nullable: true),
                     Name = table.Column<string>(nullable: true)
                 },
@@ -41,7 +42,7 @@ namespace Hospital.API.Migrations
                 columns: table => new
                 {
                     Id = table.Column<int>(nullable: false)
-                        .Annotation("Sqlite:Autoincrement", true),
+                        .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
                     Birthdate = table.Column<DateTimeOffset>(nullable: false),
                     FamilyName = table.Column<string>(nullable: true),
                     Login = table.Column<string>(nullable: true),
@@ -61,7 +62,7 @@ namespace Hospital.API.Migrations
                 columns: table => new
                 {
                     Id = table.Column<int>(nullable: false)
-                        .Annotation("Sqlite:Autoincrement", true),
+                        .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
                     Name = table.Column<string>(nullable: true),
                     Responsibility = table.Column<string>(nullable: true)
                 },
@@ -75,7 +76,7 @@ namespace Hospital.API.Migrations
                 columns: table => new
                 {
                     Id = table.Column<int>(nullable: false)
-                        .Annotation("Sqlite:Autoincrement", true),
+                        .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
                     Cured = table.Column<DateTimeOffset>(nullable: true),
                     Diagnosed = table.Column<DateTimeOffset>(nullable: true),
                     DiseaseId = table.Column<int>(nullable: true),
@@ -104,7 +105,7 @@ namespace Hospital.API.Migrations
                 columns: table => new
                 {
                     Id = table.Column<int>(nullable: false)
-                        .Annotation("Sqlite:Autoincrement", true),
+                        .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
                     Birthdate = table.Column<DateTimeOffset>(nullable: false),
                     DepartmentId = table.Column<int>(nullable: true),
                     FamilyName = table.Column<string>(nullable: true),
@@ -138,9 +139,9 @@ namespace Hospital.API.Migrations
                 columns: table => new
                 {
                     Id = table.Column<int>(nullable: false)
-                        .Annotation("Sqlite:Autoincrement", true),
+                        .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
                     AppointmentDuration = table.Column<int>(nullable: true),
-                    Birthdate = table.Column<DateTimeOffset>(nullable: true),
+                    Birthdate = table.Column<DateTimeOffset>(nullable: false),
                     DepartmentId = table.Column<int>(nullable: true),
                     FamilyName = table.Column<string>(nullable: true),
                     Login = table.Column<string>(nullable: true),
@@ -173,9 +174,9 @@ namespace Hospital.API.Migrations
                 columns: table => new
                 {
                     Id = table.Column<int>(nullable: false)
-                        .Annotation("Sqlite:Autoincrement", true),
+                        .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
                     DateTime = table.Column<DateTimeOffset>(nullable: false),
-                    Duration = table.Column<int>(nullable: false),
+                    Duration = table.Column<int>(nullable: true),
                     Note = table.Column<string>(nullable: true),
                     PatientId = table.Column<int>(nullable: true),
                     StaffId = table.Column<int>(nullable: true)

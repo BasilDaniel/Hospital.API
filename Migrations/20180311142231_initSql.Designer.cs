@@ -11,13 +11,14 @@ using System;
 namespace Hospital.API.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20180302085406_initdatabase")]
-    partial class initdatabase
+    [Migration("20180311142231_initSql")]
+    partial class initSql
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
+                .HasAnnotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn)
                 .HasAnnotation("ProductVersion", "2.0.1-rtm-125");
 
             modelBuilder.Entity("Hospital.API.Models.Admin", b =>
@@ -25,7 +26,7 @@ namespace Hospital.API.Migrations
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<DateTime>("Birthdate");
+                    b.Property<DateTimeOffset>("Birthdate");
 
                     b.Property<int?>("DepartmentId");
 
@@ -59,7 +60,7 @@ namespace Hospital.API.Migrations
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<DateTime>("DateTime");
+                    b.Property<DateTimeOffset>("DateTime");
 
                     b.Property<int>("Duration");
 
@@ -111,7 +112,7 @@ namespace Hospital.API.Migrations
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<DateTime>("Birthdate");
+                    b.Property<DateTimeOffset>("Birthdate");
 
                     b.Property<string>("FamilyName");
 
@@ -137,9 +138,9 @@ namespace Hospital.API.Migrations
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<DateTime?>("Cured");
+                    b.Property<DateTimeOffset?>("Cured");
 
-                    b.Property<DateTime?>("Diagnosed");
+                    b.Property<DateTimeOffset?>("Diagnosed");
 
                     b.Property<int?>("DiseaseId");
 
@@ -177,7 +178,7 @@ namespace Hospital.API.Migrations
 
                     b.Property<int>("AppointmentDuration");
 
-                    b.Property<DateTime>("Birthdate");
+                    b.Property<DateTimeOffset>("Birthdate");
 
                     b.Property<int?>("DepartmentId");
 
