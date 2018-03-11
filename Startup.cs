@@ -36,7 +36,7 @@ namespace Hospital.API
         {
              var key = Encoding.ASCII.GetBytes(Configuration.GetSection("AppSettings:Token").Value);
             services.AddDbContext<DataContext>(x => x
-            .UseMySql(Configuration.GetConnectionString("DefaultConnection"))
+            .UseSqlServer(Configuration.GetConnectionString("DefaultConnection"))
             .ConfigureWarnings(warnings => warnings.Ignore(CoreEventId.IncludeIgnoredWarning)));            
             services.AddTransient<Seed>();
             services.AddMvc();
