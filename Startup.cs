@@ -107,7 +107,7 @@ namespace Hospital.API
                 });
             }
 
-            seeder.SeedData();
+            //seeder.SeedData();
             app.UseCors(x => x.AllowAnyHeader().AllowAnyMethod().AllowAnyOrigin().AllowCredentials());
             app.UseAuthentication();
             app.UseDefaultFiles();
